@@ -1,27 +1,12 @@
 import sys
 import xbmc
+import time
 
-# Takes in a list of filenames and spits out an XML file
-# They are expected to have .mpg extension
-def generate_xml(files):
-	xml = "<dvdauthor>"
-	xml += "<vmgm />"
-	xml += "<titleset>"
-	xml += "<titles>"
-
-	for video in files:
-		xml += "<pgc>"
-		xml += "<vob file=\"" + video + "\" />"
-		xml += "</pgc>"
-	xml += "</titles>"
-	xml += "</titleset>"
-	xml += "</dvdauthor>"
-	return xml	
-
+# Grab file name and add it to the queue
 if __name__ == '__main__':
-	filename = sys.listitem.getfilename()
+	filename = sys.listitem.getInfoLabel("ListItem.FileNameAndPath")
 	message = "Clicked on '%s'" % sys.listitem.getLabel()
-	xbmc.executebuiltin("Notification(\"Added to DVD queue!\", \"%s\")" % message)
+	xbmc.executebuiltin("Notification(\"%s\", \"Added to DVD queue\")" % message)
 	f = open("/tmp/dvd_queue.txt","a")
 	f.write(filename)
 	f.close()
