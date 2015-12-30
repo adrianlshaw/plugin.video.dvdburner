@@ -19,5 +19,9 @@ def generate_xml(files):
 	return xml	
 
 if __name__ == '__main__':
-    message = "Clicked on '%s'" % sys.listitem.getLabel()
-    xbmc.executebuiltin("Notification(\"This is a test!\", \"%s\")" % message)
+	filename = sys.listitem.getfilename()
+	message = "Clicked on '%s'" % sys.listitem.getLabel()
+	xbmc.executebuiltin("Notification(\"Added to DVD queue!\", \"%s\")" % message)
+	f = open("/tmp/dvd_queue.txt","a")
+	f.write(filename)
+	f.close()
