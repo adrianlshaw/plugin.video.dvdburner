@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.dvdburner" name="DVD burner" version="0.0.1" provider-name="adrianlshaw">
+    <requires>
+        <import addon="xbmc.python" version="2.20.0"/>
+    </requires>
+<extension point="kodi.context.item" library="addon.py">
+  <item>
+    <label>Add to DVD</label>
+    <visible>StringCompare(ListItem.dbtype,movie) | StringCompare(ListItem.dbtype,tvshow) | StringCompare(ListItem.dbtype,season) | StringCompare(ListItem.dbtype,episode)</visible>
+  </item>
+</extension>
+    <extension point="xbmc.addon.metadata">
+        <language>en</language>
+        <platform>linux</platform>
+        <website>http://www.github.com</website>
+        <source>https://github.com/adrianlshaw/plugin.video.dvdburner</source>
+        <forum>https://github.com/adrianlshaw/plugin.video.dvdburner/issues</forum>
+        <email>adrianlshaw@gmail.com</email>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+    </extension>
+</addon>
