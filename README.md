@@ -7,3 +7,5 @@ dependencies that are needed, which might mean trouble for OpenELEC.
 This is some quick hacking around and is very much a slow work in progress.
 To install, click the "Download ZIP" button on this page
 and copy it to your KODI box.
+
+![](diagram.png "Diagram")
